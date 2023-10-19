@@ -2,43 +2,53 @@
 """ENTER YOUR SOLUTION HERE!"""
 
 class Employee:
-    def __init__(self, name, salary=None, commission=None, percommission=None, contract=None, percontract=None,bonus=None):
+    def __init__(self, name, salary=None, commission=None, percommission=None, contract=None, percontract=None,
+                 bonus=None):
         self.name = name
         if contract is not None and bonus is not None:
-            self.contract=contract
-            self.percontract=percontract
-            self.bonus=bonus
-            self.pay=(contract*percontract)+bonus
-            self.descripe="works on a contract of " + str(self.contract) + " hours at " + str(self.percontract)+ "/hour and receives a bonus commission of " + str(self.bonus) + ". Their total pay is "+str(self.pay)+"."
+            self.contract = contract
+            self.percontract = percontract
+            self.bonus = bonus
+            self.pay = (contract * percontract) + bonus
+            self.descripe = " works on a contract of " + str(self.contract) + " hours at " + str(
+                self.percontract) + "/hour and receives a bonus commission of " + str(
+                self.bonus) + ". Their total pay is " + str(self.pay) + "."
         elif salary is not None and bonus is not None:
             self.salary = salary
             self.bonus = bonus
             self.pay = salary + bonus
-            self.descripe="works on a monthly salary of "+str(self.salary)+" and receives a bonus commission of "+ str(self.bonus)+". Their total pay is "+str(self.pay)+"."
+            self.descripe = " works on a monthly salary of " + str(
+                self.salary) + " and receives a bonus commission of " + str(self.bonus) + ". Their total pay is " + str(
+                self.pay) + "."
         elif commission is not None and contract is not None:
             self.commission = commission
             self.percommission = percommission
             self.contract = contract
             self.percontract = percontract
-            self.pay = (commission*percommission)+(contract*percontract)
-            self.descripe="works on a contract of"+ str(self.contract)+" hours at "+ str(self.percontract)+"/hour and receives a commission for "+ str(self.commission)+" contract(s) at "+str(self.percommission)+"/contract. Their total pay is "+str(self.pay)+"."
+            self.pay = (commission * percommission) + (contract * percontract)
+            self.descripe = " works on a contract of " + str(self.contract) + " hours at " + str(
+                self.percontract) + "/hour and receives a commission for " + str(
+                self.commission) + " contract(s) at " + str(
+                self.percommission) + "/contract. Their total pay is " + str(self.pay) + "."
         elif salary is not None and contract is not None:
             self.salary = salary
             self.contract = contract
             self.percontract = percontract
-            self.pay = salary + (contract*percontract)
-            self.descripe="works on a monthly salary of"+str(self.salary)+" and receives a commission for"+ str( self.contract) +"contract(s) at "+str(self.percontract)+"/contract. Their total pay is "+str(self.pay)+"."
+            self.pay = salary + (contract * percontract)
+            self.descripe = " works on a monthly salary of " + str(
+                self.salary) + " and receives a commission for " + str(self.contract) + " contract(s) at " + str(
+                self.percontract) + "/contract. Their total pay is " + str(self.pay) + "."
         elif salary is None and contract is not None:
             self.contract = contract
             self.percontract = percontract
-            self.pay = (contract*percontract)
-            self.descripe="works on a contract of"+ str(self.contract)+" hours at "+ str(self.percontract)+"/hour. Their total pay is "+str(self.pay)+"."
+            self.pay = (contract * percontract)
+            self.descripe = " works on a contract of " + str(self.contract) + " hours at " + str(
+                self.percontract) + "/hour. Their total pay is " + str(self.pay) + "."
         else:
-            self.salary=salary
-            self.pay=salary
-            self.descripe="works on a monthly salary of "+str(self.salary)+". Their total pay is "+str(self.pay)+"."
-
-
+            self.salary = salary
+            self.pay = salary
+            self.descripe = " works on a monthly salary of " + str(self.salary) + ". Their total pay is " + str(
+                self.pay) + "."
 
     def get_pay(self):
         return self.pay
